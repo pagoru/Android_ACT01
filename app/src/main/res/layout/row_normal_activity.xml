@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20px">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Codi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/Pastel_Min_Brown" />
+
+            <TextView
+                android:text="Stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="@color/Pastel_Min_Brown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Code"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_nor_act_code"
+                android:textSize="24sp"
+                android:textColor="@color/Pastel_Brown"
+                android:textStyle="normal|bold" />
+
+            <TextView
+                android:text="Stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_nor_act_stock"
+                android:textSize="24sp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/Pastel_Brown"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20px">
+
+            <TextView
+                android:text="Descripció"
+                android:layout_width="276dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.11"
+                android:textColor="@color/Pastel_Min_Brown" />
+
+            <TextView
+                android:text="PVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="@color/Pastel_Min_Brown" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Description"
+                android:layout_width="249dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_nor_act_description"
+                android:textSize="14sp"
+                android:layout_weight="0.83"
+                android:textColor="@color/Pastel_Brown"
+                android:textStyle="normal|bold"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:text="PVP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_nor_act_pvp"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="@color/Pastel_Brown"
+                android:textStyle="normal|bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

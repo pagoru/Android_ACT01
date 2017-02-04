@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Afegir article"
+        android:id="@+id/main_menu_add" />
+    <item android:title="Refrescar"
+        android:id="@+id/main_menu_refresh" />
+    <group android:visible="true">
+        <item android:title="Filtrar per descripció"
+            android:id="@+id/main_menu_filterDescriptions" />
+        <item android:title="Filtrar per stock ASC"
+            android:id="@+id/main_menu_filterStock_ASC" />
+        <item android:title="Filtrar per stock DESC"
+            android:id="@+id/main_menu_filterStock_DESC" />
+    </group>
+</menu>
