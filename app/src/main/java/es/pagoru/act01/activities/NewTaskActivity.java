@@ -49,7 +49,7 @@ public class NewTaskActivity extends Activity {
             return;
         }
 
-        if(articleDataSource.GetArticle(code).getCount() != 0){
+        if(articleDataSource.getArticle(code).getCount() != 0){
             ToastUtils.make(this, "El codi de l'article ja esta registrat.");
             return;
         }
@@ -85,7 +85,7 @@ public class NewTaskActivity extends Activity {
 
         if(stock.length() != 0){
             try{
-                stock_num = Integer.parseInt(pvp);
+                stock_num = Integer.parseInt(stock);
             } catch (Exception e){
                 ToastUtils.make(this, "El stock ha de ser un número enter.");
                 return;

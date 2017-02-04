@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20px">
+        android:padding="20px"
+        android:weightSum="1">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -16,44 +18,65 @@
 
             <TextView
                 android:text="Codi"
-                android:layout_width="wrap_content"
+                android:layout_width="147dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textColor="@color/Pastel_Min_Brown" />
-
-            <TextView
-                android:text="Stock"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textAlignment="textEnd"
-                android:textColor="@color/Pastel_Min_Brown" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="Code"
-                android:layout_width="208dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/row_nor_act_code"
-                android:textSize="24sp"
-                android:textColor="@color/Pastel_Brown"
-                android:textStyle="normal|bold" />
 
             <TextView
                 android:text="Stock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:textColor="@color/Pastel_Min_Brown" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
+
+            <TextView
+                android:text="Code"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/row_nor_act_code"
+                android:textSize="24sp"
+                android:textColor="@color/Pastel_Brown"
+                android:textStyle="normal|bold"
+                android:layout_weight="1" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="+"
+                android:id="@+id/row_nor_act_add"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:layout_height="40dp"
+                android:layout_width="40dp" />
+
+            <Button
+                android:text="-"
+                android:id="@+id/row_nor_act_sub"
+                android:textAlignment="center"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                android:text="Stock"
+                android:layout_width="94dp"
+                android:layout_height="match_parent"
                 android:id="@+id/row_nor_act_stock"
                 android:textSize="24sp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/Pastel_Brown"
                 android:textStyle="normal|bold" />
-
         </LinearLayout>
 
         <LinearLayout

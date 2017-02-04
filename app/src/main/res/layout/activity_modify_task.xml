@@ -11,7 +11,6 @@
     tools:context="es.pagoru.act01.activities.ModifyTaskActivity">
 
 
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -68,6 +67,42 @@
             android:ems="10"
             android:id="@+id/modTask_stock"
             android:enabled="false"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="+"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/modTask_stock_add" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:text="-"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/modTask_stock_sub"
+                android:layout_weight="1" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
