@@ -85,7 +85,7 @@ public class NewTaskActivity extends Activity {
 
         if(stock.length() != 0){
             try{
-                stock_num = Integer.parseInt(pvp);
+                stock_num = Integer.parseInt(stock);
             } catch (Exception e){
                 ToastUtils.make(this, "El stock ha de ser un número enter.");
                 return;
