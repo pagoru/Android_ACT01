@@ -39,7 +39,9 @@ public class MovementActivityCursorAdapter extends SimpleCursorAdapter {
         Cursor cursor = (Cursor) getItem(position);
         TextView textView = ((TextView)view.findViewById(R.id.row_mov_act_calendar));
 
-        textView.setText(getBeautyDateFromCalendarString(textView.getText().toString()));
+        textView.setText(getBeautyDateFromCalendarString(
+                cursor.getString(cursor.getColumnIndex(ArticleMovementDataSource._CALENDAR))
+        ));
 
         view.setBackgroundColor(
                 (cursor.getString(cursor.getColumnIndex(ArticleMovementDataSource._TYPE)))

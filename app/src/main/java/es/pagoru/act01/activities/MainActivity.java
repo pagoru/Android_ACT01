@@ -25,8 +25,8 @@ public class MainActivity extends ListActivity {
     0 - ASC
     1 - DESC
      */
-    private static int ORDER_LIST = 0;
-    private static boolean SHOW_DESCRIPTIONS = true;
+    public static int ORDER_LIST = 0;
+    public static boolean SHOW_DESCRIPTIONS = true;
 
     private static final String[] FROM = new String[]{
             ArticleDataSource._CODE,

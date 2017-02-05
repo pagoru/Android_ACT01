@@ -5,10 +5,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -34,73 +31,61 @@ public class MainActivityCursorAdapter extends SimpleCursorAdapter {
     }
 
     private View currentView;
-    private Cursor cursor;
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
 
         currentView = view;
-        cursor = (Cursor) getItem(position);
+        Cursor cursor = ((Cursor) getItem(position));
 
-        setBackgroundColor();
+        final String article_code = cursor.getString(cursor.getColumnIndex(ArticleDataSource._CODE));
+        final int article_stock = Integer.parseInt(cursor.getString(cursor.getColumnIndex(ArticleDataSource._STOCK)));
+
+        setBackgroundColor(article_stock);
 
         view.findViewById(R.id.row_nor_act_add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addArticleStock(1);
+                addArticleStock(article_code, article_stock, 1);
             }
         });
 
         view.findViewById(R.id.row_nor_act_sub).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addArticleStock(-1);
+                addArticleStock(article_code, article_stock, -1);
             }
         });
 
-        return currentView;
+        return view;
     }
 
-    private void setBackgroundColor(){
+    private void setBackgroundColor(int article_stock){
         currentView.setBackgroundColor(
-                getArticleStock() == 0
+                article_stock == 0
                         ? COLOR_RED
                         : COLOR_GRAY
         );
     }
 
-    private String getArticleCode(){
-        return ((TextView) currentView.findViewById(R.id.row_nor_act_code)).getText().toString();
-    }
-
-    private int getArticleStock(){
-        return Integer.parseInt(((TextView) currentView.findViewById(R.id.row_nor_act_stock)).getText().toString());
-    }
-
-    private void setArticleStock(String amount){
-        ((TextView) currentView.findViewById(R.id.row_nor_act_stock)).setText(amount);
-        setBackgroundColor();
-    }
-
-    private void addArticleStock(int amount){
+    private void addArticleStock(String article_code, int article_stock, int amount){
         ArticleDataSource articleDataSource = new ArticleDataSource(currentView.getContext());
         ArticleMovementDataSource articleMovementDataSource = new ArticleMovementDataSource(currentView.getContext());
 
-        int a = (getArticleStock() + amount);
+        int a = (article_stock + amount);
         if(a < 0){
             return;
         }
-        setArticleStock(a + "");
         articleDataSource.updateArticleStock(
                 new Article(
-                        getArticleCode(),
+                        article_code,
                         a
                 )
         );
 
         articleMovementDataSource.addArticleMovement(
-                getArticleCode(),
+                article_code,
                 new ArticleMovement(
                         Calendar.getInstance(),
                         Math.abs(amount),
@@ -109,5 +94,11 @@ public class MainActivityCursorAdapter extends SimpleCursorAdapter {
                                 : MovementType.IN
                 )
         );
+
+        changeCursor(articleDataSource.getArticles(
+                MainActivity.ORDER_LIST,
+                MainActivity.SHOW_DESCRIPTIONS
+        ));
+        setBackgroundColor(article_stock);
     }
 }
