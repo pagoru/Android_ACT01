@@ -86,7 +86,7 @@ public class ModifyTaskActivity extends Activity {
             return;
         }
 
-        String stock = ((EditText)findViewById(R.id.newTask_stock)).getText().toString();
+        String stock = ((EditText)findViewById(R.id.modTask_stock)).getText().toString();
         int stock_num = 0;
 
         if(stock.length() != 0){
