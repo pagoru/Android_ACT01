@@ -44,7 +44,9 @@ public class ListHelper extends SQLiteOpenHelper {
                         + ArticleMovementDataSource._FK_ARTICLE_CODE + " TEXT, "
                         + ArticleMovementDataSource._CALENDAR + " TEXT, "
                         + ArticleMovementDataSource._QUANTITY + " INTEGER, "
-                        + ArticleMovementDataSource._TYPE + " TEXT "
+                        + ArticleMovementDataSource._TYPE + " TEXT, "
+                        + "FOREIGN KEY(" + ArticleMovementDataSource._FK_ARTICLE_CODE + ") "
+                        + "REFERENCES " + ArticleDataSource.TABLE_NAME + "(" + ArticleDataSource._CODE + ")"
                         + ")"
         );
     }
