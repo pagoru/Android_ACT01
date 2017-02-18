@@ -7,6 +7,7 @@
 /build
 /captures
 .externalNativeBuild
+<<<<<<< HEAD
 /.idea
 .idea/gradle.xml
 
@@ -15,3 +16,7 @@
 .idea/modules.xml
 
 .idea/runConfigurations.xml
+=======
+.idea
+/.idea
+>>>>>>> master
