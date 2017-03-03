@@ -11,6 +11,7 @@ import android.view.Window;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import es.pagoru.act01.activities.cursoradapters.MainActivityCursorAdapter;
 import es.pagoru.act01.utils.article.ArticleDataSource;
 import es.pagoru.act01.R;
 
@@ -24,8 +25,8 @@ public class MainActivity extends ListActivity {
     0 - ASC
     1 - DESC
      */
-    private static int ORDER_LIST = 0;
-    private static boolean SHOW_DESCRIPTIONS = true;
+    public static int ORDER_LIST = 0;
+    public static boolean SHOW_DESCRIPTIONS = true;
 
     private static final String[] FROM = new String[]{
             ArticleDataSource._CODE,
@@ -76,6 +77,8 @@ public class MainActivity extends ListActivity {
                 return option_filterDescription();
             case R.id.main_menu_refresh:
                 return option_refresh();
+            case R.id.main_menu_movements:
+                return option_movements();
             default:
         }
         return super.onOptionsItemSelected(item);
@@ -93,6 +96,11 @@ public class MainActivity extends ListActivity {
                         1
                 )
         );
+    }
+
+    private boolean option_movements(){
+        startActivity(new Intent(this, MovementsCalendarActivity.class));
+        return true;
     }
 
     private boolean option_filterDescription(){
@@ -132,6 +140,8 @@ public class MainActivity extends ListActivity {
 
         startActivity(intent);
     }
+
+
 
     @Override
     public void onBackPressed() {
