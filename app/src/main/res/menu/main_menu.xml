@@ -4,8 +4,6 @@
 
     <item android:title="Afegir article"
         android:id="@+id/main_menu_add" />
-    <item android:title="Veure moviments"
-        android:id="@+id/main_menu_movements" />
     <item android:title="Refrescar"
         android:id="@+id/main_menu_refresh" />
     <group android:visible="true">

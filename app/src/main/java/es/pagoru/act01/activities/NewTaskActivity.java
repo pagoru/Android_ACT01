@@ -49,7 +49,7 @@ public class NewTaskActivity extends Activity {
             return;
         }
 
-        if(articleDataSource.getArticle(code).getCount() != 0){
+        if(articleDataSource.GetArticle(code).getCount() != 0){
             ToastUtils.make(this, "El codi de l'article ja esta registrat.");
             return;
         }

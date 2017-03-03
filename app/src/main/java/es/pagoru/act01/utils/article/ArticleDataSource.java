@@ -14,9 +14,7 @@ import es.pagoru.act01.ListHelper;
 public class ArticleDataSource {
 
     public static final String TABLE_NAME = "article_table";
-
     public static final String _ID = "_id";
-
     public static final String _CODE = "code";
     public static final String _DESCRIPTION = "description";
     public static final String _PVP = "pvp";
@@ -57,7 +55,7 @@ public class ArticleDataSource {
         );
     }
 
-    public Cursor getArticle(String code){
+    public Cursor GetArticle(String code){
         return db_reader.query(
                 TABLE_NAME,
                 new String[]{_ID, _CODE, _DESCRIPTION, _PVP, _STOCK},
@@ -73,7 +71,6 @@ public class ArticleDataSource {
 
     public long addArticle(Article article){
         ContentValues contentValues = new ContentValues();
-
         contentValues.put(_CODE, article.getCode());
         contentValues.put(_DESCRIPTION, article.getDescription());
         contentValues.put(_PVP, article.getPvp());
@@ -84,24 +81,9 @@ public class ArticleDataSource {
 
     public long updateArticle(Article article){
         ContentValues contentValues = new ContentValues();
-
         contentValues.put(_CODE, article.getCode());
         contentValues.put(_DESCRIPTION, article.getDescription());
         contentValues.put(_PVP, article.getPvp());
-        contentValues.put(_STOCK, article.getStock());
-
-        return db_writer.update(
-                TABLE_NAME,
-                contentValues,
-                _CODE + "=?",
-                new String[]{ article.getCode() }
-        );
-    }
-
-    public long updateArticleStock(Article article){
-        ContentValues contentValues = new ContentValues();
-
-        contentValues.put(_CODE, article.getCode());
         contentValues.put(_STOCK, article.getStock());
 
         return db_writer.update(
