@@ -2,6 +2,8 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Temps clients"
+        android:id="@+id/main_menu_weather" />
     <item android:title="Afegir article"
         android:id="@+id/main_menu_add" />
     <item android:title="Veure moviments"

@@ -5,8 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import es.pagoru.act01.utils.article.ArticleDataSource;
-import es.pagoru.act01.utils.article.movement.ArticleMovement;
 import es.pagoru.act01.utils.article.movement.ArticleMovementDataSource;
+import es.pagoru.act01.utils.city.CityDataSource;
 
 /**
  * Created by Pablo on 02/02/2017.
@@ -14,7 +14,7 @@ import es.pagoru.act01.utils.article.movement.ArticleMovementDataSource;
 
 public class ListHelper extends SQLiteOpenHelper {
 
-    private static final int db_VERSION = 2;
+    private static final int db_VERSION = 3;
     private static final String db_NAME = "act01_db";
 
     public ListHelper(Context context){
@@ -32,11 +32,12 @@ public class ListHelper extends SQLiteOpenHelper {
     }
 
     private void createTables(SQLiteDatabase sqLiteDatabase){
-        createArticleTable(sqLiteDatabase);
-        createArticleMovementTable(sqLiteDatabase);
+        createArticleTable_v1(sqLiteDatabase);
+        createArticleMovementTable_v2(sqLiteDatabase);
+        createCitiesTable_v3(sqLiteDatabase);
     }
 
-    private void createArticleMovementTable(SQLiteDatabase sqLiteDatabase){
+    private void createArticleMovementTable_v2(SQLiteDatabase sqLiteDatabase){
         sqLiteDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS " + ArticleMovementDataSource.TABLE_NAME
                         + "("
@@ -51,7 +52,7 @@ public class ListHelper extends SQLiteOpenHelper {
         );
     }
 
-    private void createArticleTable(SQLiteDatabase sqLiteDatabase){
+    private void createArticleTable_v1(SQLiteDatabase sqLiteDatabase){
         sqLiteDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS " + ArticleDataSource.TABLE_NAME
                         + "("
@@ -61,6 +62,23 @@ public class ListHelper extends SQLiteOpenHelper {
                         + ArticleDataSource._PVP + " INTEGER, "
                         + ArticleDataSource._STOCK + " INTEGER "
                         + ")"
+        );
+    }
+
+    private void createCitiesTable_v3(SQLiteDatabase sqLiteDatabase){
+        sqLiteDatabase.execSQL(
+                "CREATE TABLE IF NOT EXISTS " + CityDataSource.TABLE_NAME
+                        + "("
+                        + CityDataSource._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                        + CityDataSource._NAME + " TEXT UNIQUE "
+                        + ")"
+        );
+        sqLiteDatabase.execSQL(
+                "INSERT OR IGNORE INTO "  + CityDataSource.TABLE_NAME
+                        + "(" + CityDataSource._NAME + ") "
+                        + "VALUES "
+                        + "('Barcelona'), ('Tarragona'), "
+                        + "('Girona'), ('Lleida')"
         );
     }
 }

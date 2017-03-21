@@ -67,6 +67,8 @@ public class MainActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
+            case R.id.main_menu_weather:
+                return option_weather();
             case R.id.main_menu_add:
                 return option_add();
             case R.id.main_menu_filterStock_ASC:
@@ -96,6 +98,11 @@ public class MainActivity extends ListActivity {
                         1
                 )
         );
+    }
+
+    private boolean option_weather(){
+        startActivity(new Intent(this, WeatherCityListActivity.class));
+        return true;
     }
 
     private boolean option_movements(){

@@ -18,7 +18,8 @@
         <activity android:name=".activities.NewTaskActivity" />
         <activity android:name=".activities.ModifyTaskActivity" />
         <activity android:name=".activities.MovementsCalendarActivity" />
-        <activity android:name=".activities.MovementsArticleActivity"></activity>
+        <activity android:name=".activities.MovementsArticleActivity" />
+        <activity android:name=".activities.WeatherCityListActivity"></activity>
     </application>
 
 </manifest>
