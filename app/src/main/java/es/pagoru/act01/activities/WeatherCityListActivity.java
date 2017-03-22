@@ -47,8 +47,8 @@ public class WeatherCityListActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.main_menu_add:
-                startActivity(new Intent(this, NewTaskActivity.class));
+            case R.id.weather_menu_add:
+                startActivity(new Intent(this, AddWeatherActivity.class));
                 return true;
             default:
         }

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="es.pagoru.act01">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +22,9 @@
         <activity android:name=".activities.ModifyTaskActivity" />
         <activity android:name=".activities.MovementsCalendarActivity" />
         <activity android:name=".activities.MovementsArticleActivity" />
-        <activity android:name=".activities.WeatherCityListActivity"></activity>
+        <activity android:name=".activities.WeatherCityListActivity" />
+        <activity android:name=".activities.WeatherCityActivity" />
+        <activity android:name=".activities.AddWeatherActivity"></activity>
     </application>
 
 </manifest>
