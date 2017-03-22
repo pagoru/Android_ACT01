@@ -61,7 +61,7 @@ public class AddWeatherActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            pdLoading.setMessage("\tCargando...");
+            pdLoading.setMessage("\tCarregant...");
             pdLoading.setCancelable(false);
             pdLoading.show();
 
@@ -76,7 +76,7 @@ public class AddWeatherActivity extends Activity {
         protected void onPostExecute(String result) {
             pdLoading.dismiss();
             if(result.equalsIgnoreCase("unsuccessful")){
-                Toast.makeText(context, "Ciudad invalida...", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Ciutat invalida...", Toast.LENGTH_LONG).show();
                 return;
             }
             try{
